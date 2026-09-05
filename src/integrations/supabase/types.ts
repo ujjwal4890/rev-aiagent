@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      recovery_cases: {
+        Row: {
+          amount: number
+          attempts: number
+          case_ref: string
+          case_type: string
+          created_at: string
+          customer: string
+          failure_reason: string
+          id: string
+          last_action: string | null
+          last_message: string | null
+          opt_out: boolean
+          preferred_lang: string
+          recovered_amount: number
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          amount?: number
+          attempts?: number
+          case_ref: string
+          case_type?: string
+          created_at?: string
+          customer: string
+          failure_reason?: string
+          id?: string
+          last_action?: string | null
+          last_message?: string | null
+          opt_out?: boolean
+          preferred_lang?: string
+          recovered_amount?: number
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          attempts?: number
+          case_ref?: string
+          case_type?: string
+          created_at?: string
+          customer?: string
+          failure_reason?: string
+          id?: string
+          last_action?: string | null
+          last_message?: string | null
+          opt_out?: boolean
+          preferred_lang?: string
+          recovered_amount?: number
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
