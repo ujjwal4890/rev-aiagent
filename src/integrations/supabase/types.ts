@@ -14,22 +14,56 @@ export type Database = {
   }
   public: {
     Tables: {
+      message_templates: {
+        Row: {
+          created_at: string
+          english_template: string
+          failure_reason: string
+          hinglish_template: string
+          id: string
+          strategy: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          english_template?: string
+          failure_reason: string
+          hinglish_template?: string
+          id?: string
+          strategy?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          english_template?: string
+          failure_reason?: string
+          hinglish_template?: string
+          id?: string
+          strategy?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       recovery_cases: {
         Row: {
           amount: number
           attempts: number
           case_ref: string
           case_type: string
+          checkout_url: string
           created_at: string
           customer: string
+          escalation_note: string | null
           failure_reason: string
           id: string
           last_action: string | null
           last_message: string | null
           opt_out: boolean
+          pay_url: string
           preferred_lang: string
           recovered_amount: number
           status: string
+          stopping_rule: string | null
           updated_at: string
         }
         Insert: {
@@ -37,16 +71,20 @@ export type Database = {
           attempts?: number
           case_ref: string
           case_type?: string
+          checkout_url?: string
           created_at?: string
           customer: string
+          escalation_note?: string | null
           failure_reason?: string
           id?: string
           last_action?: string | null
           last_message?: string | null
           opt_out?: boolean
+          pay_url?: string
           preferred_lang?: string
           recovered_amount?: number
           status?: string
+          stopping_rule?: string | null
           updated_at?: string
         }
         Update: {
@@ -54,16 +92,20 @@ export type Database = {
           attempts?: number
           case_ref?: string
           case_type?: string
+          checkout_url?: string
           created_at?: string
           customer?: string
+          escalation_note?: string | null
           failure_reason?: string
           id?: string
           last_action?: string | null
           last_message?: string | null
           opt_out?: boolean
+          pay_url?: string
           preferred_lang?: string
           recovered_amount?: number
           status?: string
+          stopping_rule?: string | null
           updated_at?: string
         }
         Relationships: []
